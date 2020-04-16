@@ -1,0 +1,12 @@
+#middle-container {
+  padding-bottom: 37.2%;
+  text-align: center;
+}
+
+.table-funcionarios {
+  margin: auto 30% auto 30%;
+}
+
+th {
+  font-weight: bold;
+}
