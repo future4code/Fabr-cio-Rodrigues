@@ -1,7 +1,6 @@
 #middle-container {
   background-color: #916dd5;
-  display: inline-block;
-  padding-bottom: 6.05%;
+  padding-bottom: 12.10%;
 }
 
 h1 {
@@ -20,35 +19,55 @@ h3 {
   display: block;
 }
 
-img {
-  width: 200px;
-  height: 200px;
-  display: inline;
-  margin-right: 2.5%;
+.imagens {
+  border: 1px groove black;
+  width: 55%;
+  height: 10%;
+  margin-left: 25.0%;
 }
 
 .imagem-um {
   width: 300px;
-  margin-left: 22.5%;
+  height: 200px;
+  display: inline;
+  margin-right: 14%;
+}
+
+.imagem-dois {
+  width: 200px;
+  height: 200px;
+  display: inline;
+  margin-right: 15.5%;
+
+}
+
+.imagem-tres {
+  width: 200px;
+  height: 200px;
+  display: inline;
 }
 
 #bottom-container {
   background-color: #3e206d;
   text-align: left;
-  margin: 0;
-  padding: 2% 0% 2% 0%;
+  padding: 2% 0% 3% 0%;
 }
 
 h4 {
-  padding: 10% 10% 10% 10%;
+  padding: 0% 10% 0% 10%;
   display: inline;
 
 }
 
 .contatos {
-  padding: 20% 10% 10% 15%;
+  padding: 20% 10% 0% 15%;
 }
 
-.contatos p {
+.contate-nos {
   display: inline;
+}
+
+.contato {
+  display: inline;
+  margin-right: 3%;
 }
