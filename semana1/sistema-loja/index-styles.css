@@ -1,0 +1,73 @@
+#middle-container {
+  background-color: #916dd5;
+  padding-bottom: 12.10%;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  font-size: 30px;
+  padding: 5% 0% 0% 20%;
+}
+
+h3 {
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  font-size: 18px;
+  padding: 0% 10% 5% 20.1%;
+  display: block;
+}
+
+.imagens {
+  border: 1px groove black;
+  width: 55%;
+  height: 10%;
+  margin-left: 25.0%;
+}
+
+.imagem-um {
+  width: 300px;
+  height: 200px;
+  display: inline;
+  margin-right: 14%;
+}
+
+.imagem-dois {
+  width: 200px;
+  height: 200px;
+  display: inline;
+  margin-right: 15.5%;
+
+}
+
+.imagem-tres {
+  width: 200px;
+  height: 200px;
+  display: inline;
+}
+
+#bottom-container {
+  background-color: #3e206d;
+  text-align: left;
+  padding: 2% 0% 3% 0%;
+}
+
+h4 {
+  padding: 0% 10% 0% 10%;
+  display: inline;
+
+}
+
+.contatos {
+  padding: 20% 10% 0% 15%;
+}
+
+.contate-nos {
+  display: inline;
+}
+
+.contato {
+  display: inline;
+  margin-right: 3%;
+}

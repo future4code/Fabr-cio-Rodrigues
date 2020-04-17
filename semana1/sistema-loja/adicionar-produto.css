@@ -1,0 +1,30 @@
+#middle-container {
+  padding-bottom: 35%;
+  padding-top: 2%;
+}
+
+label {
+  padding-right: 10%;
+  margin-top: 50%;
+  margin-left: 30%;
+}
+
+input {
+  padding: 5px;
+}
+
+button {
+  margin-top: 2%;
+  margin-left: 32.5%;
+  padding: 0.5% 0.5%;
+  width: 30%;
+  font-size: 25px;
+  background-color: #6e209d;
+  border: black;
+  border-radius: 10px;
+}
+
+button:hover {
+  color: white;
+  background-color: #3e206d;
+}

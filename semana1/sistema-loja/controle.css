@@ -1,0 +1,12 @@
+#tabela-preco {
+    text-align: center;
+    margin-left: 20%;
+}
+
+td {
+    border: 1px ridge black;
+}
+
+th {
+    font-weight: bolder;
+}

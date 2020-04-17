@@ -1,0 +1,59 @@
+#top-container {
+  background-color: #3e206d;
+  padding: 1% 0;
+  text-align: center;
+}
+
+body {
+    margin: 0;
+    color: #f0e3ff;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, label, th, td {
+    color: #f0e3ff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#inicio {
+    
+}
+
+form {
+    display: inline;
+    position: relative;
+    padding-right: 25%;
+}
+
+#nome-loja {
+    padding-right: 45%;
+    display: inline;
+    position: relative;
+}
+
+.nav-a {
+    font-size: 17px;
+    text-decoration: none;
+    display: inline;
+    margin-right: 1.5%;
+    text-align: right;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    display: inline;
+    position: relative;
+}
+
+
+#textbox {
+    display: inline-flex;
+    border-radius: 4px;
+    width: 15%;
+    font-size: 15px; 
+}
+
+#middle-container {
+    background-color: #916dd5;
+    display: block;
+}
