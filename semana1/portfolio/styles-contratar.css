@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+}
+#middle-container {
+    margin: 0;
+    padding: 2% 0 22.15% 0;
+    background-color: #0f4c75;
+}
+
+.contratar {
+    margin: 0px 10px;
+}
+
+input[type=text], textarea {
+  font-family: 'Roboto', sans-serif;
+  width: 100%; 
+  padding: 12px; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px;
+  margin-bottom: 16px; 
+  resize: vertical 
+}
+
+input[type=submit] {
+  font-family: 'Roboto', sans-serif;
+  background-color: #bbe1fa;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+

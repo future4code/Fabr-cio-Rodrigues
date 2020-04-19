@@ -91,33 +91,32 @@ h2 {
 
 .portfolio {
     text-align: center;
-    width: 55%;
+    width: 100%;
     height: 10%;
-    margin-left: 20.0%;
 }
 
 .portfolio-image {
-    width: 55%;
-    height: 10%;
     display: inline;
+
 }
 
 .imagem-esquerda {
     margin-top: 80px;
-    width: 420px;
-    height: 400px;
+    width: 40%;
+    height: 40%;
     display: inline;
-    margin-right: 14%;
+    margin-right: 5%;
 }
 
 .imagem-direita {
-    width: 420px;
-    height: 400px;
+    margin-top: 80px;
+    width: 40%;
+    height: 40%;
     display: inline;
 }
 
 .voltar {
-    margin-top: 400px;;
+    margin-top: 400px;
     text-align: center;
     display: block;
 }
