@@ -24,10 +24,12 @@ input {
     border-top: none;
     border-left: none;
     border-right: none;
+    outline: none;
 }
 
 button:focus {
     color: white;
+    outline: none;
 }
 
 img {
