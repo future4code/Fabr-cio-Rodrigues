@@ -30,7 +30,8 @@ img {
 }
 
 div>p:first-child {
-    display: inline;
+    display: block;
+    padding: 100px;
 }
 
 div img {
@@ -46,7 +47,7 @@ div img {
     color: white;
     position: relative;
     top: 40px;
-    right: 20%;
+    right: 24%;
 }
 
 .botao-amarelo:hover {
