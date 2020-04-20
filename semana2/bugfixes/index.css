@@ -58,7 +58,7 @@ div img {
     font-size: 20px;
     color: white;
     position: relative;
-    top: 40px;
+    top: 100px;
     right: 24%;
 }
 
@@ -93,7 +93,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
-    padding-top: 1%;
+    padding-top: 4%;
 }
 
 #container-de-descricao>ol {
