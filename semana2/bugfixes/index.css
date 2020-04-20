@@ -39,6 +39,8 @@ img {
     border-right: none;
 }
 
+
+
 div>p:first-child {
     display: block;
     padding: 100px;
@@ -74,6 +76,13 @@ div img {
     width: 20px;
 }
 
+#busca:hover {
+    opacity: 0.3;
+}
+
+#busca:focus {
+    opacity: 1.0;
+}
 
 /** 
   *
@@ -102,7 +111,7 @@ div img {
 
 #container-para-comprar>p {
     color: #c44f00;
-    padding-left: 15%;
+    padding-left: 19.25%;
     margin: 0 auto;
     font-size: 60px;
     display: inline-flex;
