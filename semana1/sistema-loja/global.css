@@ -1,7 +1,6 @@
 #top-container {
   background-color: #3e206d;
   padding: 1% 0;
-  text-align: center;
 }
 
 body {
@@ -14,29 +13,32 @@ h1, h2, h3, h4, h5, h6, a, p, label, th, td {
     font-family: 'Segoe UI', sans-serif;
 }
 
-#inicio {
-    
-}
-
 form {
     display: inline;
     position: relative;
     padding-right: 25%;
 }
 
+#nav {
+    display: inline-flexbox;
+}
+
 #nome-loja {
-    padding-right: 45%;
-    display: inline;
-    position: relative;
+    display: inline-flex;
+    align-content: initial;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#inicio {
+    margin-left: 0px;
 }
 
 .nav-a {
     font-size: 17px;
     text-decoration: none;
-    display: inline;
-    margin-right: 1.5%;
-    text-align: right;
-    position: relative;
+    display: inline-flex;
+    margin: 0px 50px;
 }
 
 a {
@@ -45,12 +47,18 @@ a {
     position: relative;
 }
 
+form {
+    margin-top: 15px;
+    padding-right: 10%;
+}
 
-#textbox {
-    display: inline-flex;
+input[type=search] {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    text-align: left;
+    padding: 8px 0px 8px 8px;
     border-radius: 4px;
-    width: 15%;
-    font-size: 15px; 
+    width: 450px;
 }
 
 #middle-container {
