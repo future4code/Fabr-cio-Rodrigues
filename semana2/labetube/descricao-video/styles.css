@@ -1,0 +1,28 @@
+h1 {
+    font-size: 2em;
+    padding-left: 7.5vw;
+}
+
+article {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+
+.div-p {
+    width: 30vw;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+}
+
+#video-full {
+    align-self: center;
+    width: 55%;
+    height: 50%;
+}
+
+span {
+    font-weight: bolder;
+}
