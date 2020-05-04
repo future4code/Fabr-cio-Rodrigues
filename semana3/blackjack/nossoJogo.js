@@ -34,15 +34,15 @@ if (newRound == false) {
    start = false;
 } else {
 
-   while(start) {
-   console.log("Vamos começar!");
+   while (start) {
+      console.log("Vamos começar!");
       isPlaying = true;
       roundX = true;
 
       // COMEÇO DO JOGO
-      while(isPlaying) {
-         
-         while(roundZ) {                        //COMPRA DE CARTAS
+      while (isPlaying) {
+
+         while (roundZ) {                        //COMPRA DE CARTAS
             alert(`Suas cartas são ${playerCards}. Sua pontuação é ${playerScore}.\nAs cartas do computador são ${computerCards}. A pontuação do computador é ${computerScore}.`);
             buyAgain = confirm("Deseja comprar outra carta?");
             if (buyAgain == true) {
@@ -57,26 +57,26 @@ if (newRound == false) {
          }
 
          // ROUND DO USUÁRIO
-         while(roundX) {                        
-         carta = comprarCarta();
-         playerCards.push(carta.texto);
-         playerScore += carta.valor;
-         roundX = false;
-         roundY = true;
+         while (roundX) {
+            carta = comprarCarta();
+            playerCards.push(carta.texto);
+            playerScore += carta.valor;
+            roundX = false;
+            roundY = true;
          }
 
          // ROUND DO COMPUTADOR
-         while (roundY) {                       
-         carta = comprarCarta();
-         computerCards.push(carta.texto);
-         computerScore += carta.valor;
-         roundZ = true;
-         roundY = false;
-         roundX = false;
+         while (roundY) {
+            carta = comprarCarta();
+            computerCards.push(carta.texto);
+            computerScore += carta.valor;
+            roundZ = true;
+            roundY = false;
+            roundX = false;
          }
 
          // CHECK DE VITÓRIA/DERROTA/EMPATE
-         if (playerScore >= 21) {               
+         if (playerScore >= 21) {
             alert("O computador ganhou! Mais sorte na próxima vez.")
             isPlaying = false;
             start = false;
@@ -104,5 +104,3 @@ if (newRound == false) {
       }
    }
 }
-
-   
