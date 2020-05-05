@@ -1,0 +1,75 @@
+body {
+    color: #FFF;
+    background-image: url(https://www.ecopetit.cat/wpic/mpic/0-790_1920-1080.jpg);
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    border-bottom: 1px solid #375a7a;  
+}
+
+header {
+    background-color: rgba(1, 42, 74, 0.5);
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputs {
+    color: #FFF;
+    background-color: rgba(1, 42, 74, 0.3);
+    display: flex;
+    justify-content: space-around;
+}
+
+#minha-tarefa {
+    color: #FFF;
+    display: inline-flex;
+    padding-top: 2%;
+    border: 1px ridge #fff;
+    width: 15vw;
+    background-color: #375a7a;
+}
+
+.tarefas-da-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 13vw);
+    gap: 15px;
+}
+
+.tarefas-da-semana > div {
+    margin-left: 15px;
+}
+
+#dia {
+    color: #FFF;
+    background-color: #375a7a;
+}
+
+#btn {
+    color: #FFF;
+    border-radius: 8px;
+    border-top-style: solid;
+    border-color: rgb(1, 42, 74);
+    background-color: rgb(1, 42, 74);
+}
+
+#btn:hover {
+    background-color: rgba(1, 42, 74, 0.3);
+}
+
+.riscado {
+    text-decoration-line: line-through;
+}
