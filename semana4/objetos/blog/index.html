@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <title>Aula 15</title>
+</head>
+<body>
+
+        <header class="header"> 
+            <div id="logo">
+                <a href="#">LabeBook</a>
+            </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Meu Perfil</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <section>
+        <div class="post-creation">
+            <input id="post-title" type="text" placeholder="Título:">
+            <input id="post-author" type="text" placeholder="Autor:">
+            <input id="post-image" type="text" placeholder="Inserir URL de imagem:">
+            <textarea id="post-input" name="post" onkeydown="onEnterPress(event)" placeholder="No que você está pensando?"></textarea>
+            <button id="post-btn" onclick="buttonClick()">Publicar</button>
+        </div>
+        
+
+        <div id="post">
+        </div>
+    </section>
+
+</body>
+</html>
