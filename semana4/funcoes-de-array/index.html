@@ -42,10 +42,10 @@
                 <option>Despesas com transporte</option> 
                 <option>Outros</option>
             </select>
-            <input id="controlador-descricao" type="text" placeholder="Insira uma descrição:">
+            <input id="controlador-descricao" type="text" onkeydown="enterBotaoCadastro(event)" placeholder="Insira uma descrição:">
         </div>
         </div>
-        <button id="controlador-btn" onclick="cliqueBotaoCadastro()">Cadastrar</button>
+        <button id="controlador-btn" class="btn" onclick="cliqueBotaoCadastro()">Cadastrar</button>
 
         <!-- DESPESAS DETALHADAS-->
 
@@ -55,7 +55,6 @@
             <label>Tipo (casa, comida, transporte, alimentação, outros)</label>
             <label>Valor mínimo</label>
             <label>Valor máximo</label>
-            <label>Despesas:</label>
         </div>
         <div id="despesas-valores">
             <select id="despesas-tipo"> 
@@ -69,31 +68,20 @@
             <input id="valor-max" type="text" placeholder="Insira o valor máximo:">
         </div>
         </div>
-        <textarea id="despesas-txtbox"></textarea>
-        <button id="despesas-btn">Cadastrar</button>
+        <div id="despesas-lista-div">
+        <ul id="despesas-lista">
+            <li id="despesas-lista-header"><p>Valor</p><p>Tipo</p><p>Descrição</p></li>
+
+        </ul>
+        </div>
+        <button id="despesas-btn" onclick="cliqueDespesasDetalhadas()" class="btn">Cadastrar</button>
 
         <!-- EXTRATO -->
 
         <div class="h1"><h1>Extrato</h1></div>
         <div class="extrato">
-        <div id="extrato-texto">
-            <label>Tipo (casa, comida, transporte, alimentação, outros)</label>
-            <label>Valor mínimo</label>
-            <label>Valor máximo</label>
+            <p>Valor total: R$</p><p id="valor-total"></p>
         </div>
-        <div id="extrato-valores">
-            <select id="extrato-tipo"> 
-                <option>Despesas de casa</option> 
-                <option>Despesas de festas</option> 
-                <option>Despesas de alimentação</option> 
-                <option>Despesas com transporte</option> 
-                <option>Outros</option>
-            </select>
-            <input id="valor-total" type="text" placeholder="Insira o valor mínimo:">
-        </div>
-        </div>
-        <button id="extrato-btn">Cadastrar</button>
-
     </section>
 </body>
 </html>

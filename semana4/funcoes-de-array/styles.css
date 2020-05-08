@@ -115,3 +115,31 @@ section {
     flex-direction: column;
     border-right: none;
 }
+
+.btn { 
+    margin-left: 5px;
+    width: 36.7%;
+}
+
+#despesas-lista-div {
+}
+
+#despesas-lista-header {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#despesas-lista {
+    margin: 0;
+    margin-left: 5px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 36.25%;
+}
+
+
+
