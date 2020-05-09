@@ -234,7 +234,43 @@ const apenasCriancas = pessoas.filter((pessoa) => {
 })
 */
 
+/* EXERCÍCIO 2
+const arr = [1, 2, 3, 4, 5, 6];
+let newArr = [];
+let newArr2 = [];
+let newArr3 = [];
+
+function arrayTimesTwo() {
+    for(let item of arr) {
+        newArr.push(item * 2);
+    }
+
+    return newArr;
+}
+
+function arrayTimesThree() {
+  for (let item of arr) {
+    newArr2.push(item * 3);
+  }
+
+  return newArr2;
+}
+
+function arrayIsPair() {
+  for (let item of arr) {
+    if (item % 2 === 0) {
+        newArr3.push(`${item} é par.`);
+    } else {
+        newArr3.push(`${item} é ímpar.`)
+    }
+  }
+
+  return newArr3;
+}
+
+*/
 
 
+/* EXERCÍCIO 3 */
 
 
