@@ -40,19 +40,36 @@ Ao final da execução, a variável numero1 receberá o menor número do array e
 As duas variáveis serão printadas usando console.log
 */
 
-/*EXERCÍCIO 5
-1. For
-2. For of
-3. For each
-*/
+/* EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO */
 
-let array = [1, 2, 3, 4, 5, 8, 96, -1];
-let newArray = [];
+/*EXERCÍCIO 1
+1. 
+A) For, for of, for each
+B)  let array = [1, 2, 3, 4, 5, 8, 96, -1];
+    let newArray = [];
 
-for(let item of array){
-    if(item % 2 === 0){
-        newArray.push(item);
-    }
-} 
+    for(let item of array){
+        if(item % 2 === 0){
+            newArray.push(item);
+        }
+    } 
 
-console.log(newArray);
+    console.log(newArray);
+
+2. 
+A) False
+B) False
+C) True
+D) True
+E) True
+
+3. */
+const quantidadeDeNumerosPares = 5;
+let i = 0
+
+while(i < quantidadeDeNumerosPares) {
+  console.log(i*2)
+  i++
+}
+
+
