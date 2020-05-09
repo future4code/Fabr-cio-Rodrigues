@@ -42,7 +42,7 @@ As duas variáveis serão printadas usando console.log
 
 /* EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO */
 
-/*EXERCÍCIO 1
+/* EXERCÍCIO 1
 1. 
 A) For, for of, for each
 B)  let array = [1, 2, 3, 4, 5, 8, 96, -1];
@@ -121,4 +121,36 @@ let diferenca = x - y;
 
 }
 
-*/
+/* EXERCÍCIOS DE FUNÇÕES */
+
+/* EXERCÍCIO 1
+
+    const array = [0, 2, 4, 8, 16, 32, 64, -256, 128, 256, 512, 1024, 2048, 9999];
+    let highestNumber = [];
+    let lowestNumber = [];
+
+    function arrayTreatment(array) {
+        for(number of array) {
+            if (number > highestNumber.length) {
+            highestNumber.push(number);
+            } else if (number < highestNumber.length) {
+            lowestNumber.push(number);
+            }
+        }
+    
+        x = highestNumber.length - 1;
+        console.log(highestNumber[x]);
+
+        y = lowestNumber.length - 1;
+        console.log(lowestNumber[y]);
+
+    } 
+
+    console.log(arrayTreatment(array));
+
+/* EXERCÍCIO 2
+
+
+    */
+
+
