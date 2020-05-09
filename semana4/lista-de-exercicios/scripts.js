@@ -149,8 +149,16 @@ let diferenca = x - y;
     console.log(arrayTreatment(array));
 
 /* EXERCÍCIO 2
+    const hello = function() {
+        alert("Hello Future4");
+    }
+
+    hello();
+*/
+
+    
 
 
-    */
+
 
 
