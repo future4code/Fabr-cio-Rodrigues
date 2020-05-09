@@ -182,7 +182,19 @@ function criaRetangulo(lado1, lado2) {
     return retangulo;
 }
 */
-    
+
+/* EXERCÍCIO 3 
+const filme = {
+    titulo: "Scarface",
+    ano: 1983,
+    diretor: "Brian De Palma",
+    atores: ["Al Pacino", " Michelle Pfeiffer", " Steven Bauer", " e Mark Margolis"],
+}
+
+alert(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}!`);
+*/
+
+/* EXERCÍCIO 4
 
 
 
