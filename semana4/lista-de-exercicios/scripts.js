@@ -40,3 +40,4 @@ Ao final da execução, a variável numero1 receberá o menor número do array e
 As duas variáveis serão printadas usando console.log
 */
 
+ 
