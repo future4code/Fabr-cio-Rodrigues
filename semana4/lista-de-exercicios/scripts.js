@@ -40,4 +40,19 @@ Ao final da execução, a variável numero1 receberá o menor número do array e
 As duas variáveis serão printadas usando console.log
 */
 
- 
+/*EXERCÍCIO 5
+1. For
+2. For of
+3. For each
+*/
+
+let array = [1, 2, 3, 4, 5, 8, 96, -1];
+let newArray = [];
+
+for(let item of array){
+    if(item % 2 === 0){
+        newArray.push(item);
+    }
+} 
+
+console.log(newArray);
