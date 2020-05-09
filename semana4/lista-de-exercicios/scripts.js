@@ -56,6 +56,7 @@ B)  let array = [1, 2, 3, 4, 5, 8, 96, -1];
 
     console.log(newArray);
 
+/* EXERCÍCIO 2
 2. 
 A) False
 B) False
@@ -63,7 +64,8 @@ C) True
 D) True
 E) True
 
-3. */
+/* EXERCÍCIO 3
+3. 
 const quantidadeDeNumerosPares = 5;
 let i = 0
 
@@ -72,4 +74,51 @@ while(i < quantidadeDeNumerosPares) {
   i++
 }
 
+O código não havia um inicializador para a variável quantidadeDeNumerosPares, parava apenas quando i fosse
+menor ou igual a quantidadeDeNumerosPares (sendo que ele precisava ser menor, apenas) e não havia um
+incremento para a variável 'i'.
+
+/* EXERCÍCIO 4
+
+function triangleType(a, b, c) {
+
+    if (a === b && b === c) {
+        return "Este é um triângulo equilátero.";
+    } else if (a === b || a === c || b === c) {
+        return "Este é um triângulo isósceles.";
+    } else {
+        return "Este é um triângulo escaleno.";
+    }
+
+}
+
+console.log(triangleType(1, 2, 3));
+console.log(triangleType(2, 2, 3));
+console.log(triangleType(2, 2, 2));
+
+
+*/
+
+function twoNumbers (x, y) {
+let diferenca = x - y;
+    
+    
+    if (x > y) {
+        if (x % y === 0) {
+            return `O maior é ${x}.\n ${x} é divísivel por ${y}.\n A diferença entre eles é ${diferenca}.`;
+        } else {
+            return `O maior é ${x}.\n ${x} não é divísivel por ${y}.\n A diferença entre eles é ${diferenca}.`;
+        }
+    } else if (y > x) { 
+        if (y % x === 0) {
+            diferenca = y - x;
+            return `O maior é ${y}.\n ${y} é divísivel por ${x}.\n A diferença entre eles é ${diferenca}.`;
+        } else {
+            return `O maior é ${y}.\n ${y} não é divísivel por ${x}.\n A diferença entre eles é ${diferenca}.`;
+        }
+    } else if (x === y) {
+        return `${x} é igual a ${y}.\n ${x} é divisível por ${y}.\n A diferença entre eles é ${diferenca}.`;
+    }
+
+}
 
