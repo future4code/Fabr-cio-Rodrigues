@@ -29,3 +29,14 @@ for ímpar, ele deve entrar no array2.
 
 Ao final, há um 3 console.logs, que vão printar no console o tamanho dos 3 arrays, em ordem: numeros, array1 e array2.
 */
+
+/* EXERCÍCIO 4 
+1 array e 2 variáveis são declaradas, sendo o array 'numeros' com valores, a variável 'numero1' com os dizeres 'Infinity' e a variável
+'numero2' com valor 0. Um laço for of é criado, com a intenção de pegar cada valor do array 'numeros' e executar a seguinte condicional: Se
+o elemento do array 'numeros' for menor do que o valor na variável 'numero1', numero1 então recebe o elemento do array. Logo após, outra condição
+é declarada: Se o elemento do array for maior do que o valor na variável 'numero2', numero2 então recebe o elemento.
+
+Ao final da execução, a variável numero1 receberá o menor número do array e a variável número2, o maior. 
+As duas variáveis serão printadas usando console.log
+*/
+
