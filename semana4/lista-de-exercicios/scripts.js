@@ -96,8 +96,7 @@ console.log(triangleType(1, 2, 3));
 console.log(triangleType(2, 2, 3));
 console.log(triangleType(2, 2, 2));
 
-
-*/
+/* EXERCÍCIO 5
 
 function twoNumbers (x, y) {
 let diferenca = x - y;
@@ -122,3 +121,4 @@ let diferenca = x - y;
 
 }
 
+*/
