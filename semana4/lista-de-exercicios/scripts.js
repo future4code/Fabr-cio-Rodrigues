@@ -156,6 +156,22 @@ let diferenca = x - y;
     hello();
 */
 
+/* EXERCÍCIOS DE OBJETOS */
+
+/* EXERCÍCIO 1 
+Os objetos são coleções de propriedades, que por sua vez mantém valores. As vezes estas propriedades
+podem manter funções, o que as tornarão métodos do objeto. Objetos em programação são úteis pois tentam 
+retratar objetos da vida real, de forma que o programa consiga manipular sua utilidade no código.
+Da mesma forma que funções evitam repetição de código, objetos também o fazem, deixando possível a 
+referenciação posteriormente no código, fazendo com que o mesmo seja mais limpo e com a mesma eficiência.
+
+Arrays são coletâneas de dados, basicamente uma variável com vários valores dentro. São úteis para
+guardar múltiplos valores que serão acessados depois no runtime. Devem ser utilizados quando precisamos
+segurar um ou mais valores, mesmo que seja incerto se vamos precisar de mais do que um valor.
+*/
+
+
+
     
 
 
