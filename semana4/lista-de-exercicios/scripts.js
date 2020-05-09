@@ -170,8 +170,18 @@ guardar múltiplos valores que serão acessados depois no runtime. Devem ser uti
 segurar um ou mais valores, mesmo que seja incerto se vamos precisar de mais do que um valor.
 */
 
+/* EXERCÍCIO 2
+function criaRetangulo(lado1, lado2) {
+    const retangulo = {
+      largura: lado1,
+      altura: lado2,
+      perimetro: 2 * (lado1 + lado2),
+      area: lado1 * lado2,
+    };
 
-
+    return retangulo;
+}
+*/
     
 
 
