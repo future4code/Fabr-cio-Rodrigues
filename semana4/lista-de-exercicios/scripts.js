@@ -195,8 +195,24 @@ alert(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${
 */
 
 /* EXERCÍCIO 4 
+const pessoa = {
+    nome: "Jéssica",
+    idade: 34,
+    email: 'jessica@outlook.com',
+    endereco: "Av Duque de Caxias, Nº111."
+}
 
+function anonimizarPessoa (pessoa) {
 
+    novaPessoa = {
+        nome: "ANÔNIMO",
+        idade: pessoa.idade,
+        email: pessoa.email,
+        endereco: pessoa.endereco,
+    }
 
+    return novaPessoa;
+}
+*/
 
 
