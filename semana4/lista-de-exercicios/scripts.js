@@ -257,7 +257,7 @@ function arrayTimesThree() {
 }
 
 function arrayIsPair() {
-  for (let item of arr) {
+  for (item of arr) {
     if (item % 2 === 0) {
         newArr3.push(`${item} é par.`);
     } else {
@@ -271,6 +271,39 @@ function arrayIsPair() {
 */
 
 
-/* EXERCÍCIO 3 */
+/* EXERCÍCIO 3
+const pessoas = [
+  { nome: "Paula", idade: 12, altura: 1.8 },
+  { nome: "João", idade: 20, altura: 1.3 },
+  { nome: "Pedro", idade: 15, altura: 1.9 },
+  { nome: "Luciano", idade: 22, altura: 1.8 },
+  { nome: "Artur", idade: 10, altura: 1.2 },
+  { nome: "Soter", idade: 70, altura: 1.9 },
+];
 
+let pessoasPermitidas = [];
+let pessoasBarradas = [];
 
+function temPermissao() {
+
+    pessoas.forEach((pessoa) => {
+        if(pessoa.altura > 1.5 && pessoa.idade >= 14 && pessoa.idade < 60) {
+            pessoasPermitidas.push(pessoa);
+        } else {
+            pessoasBarradas.push(pessoa);
+        }
+    })
+
+    console.log("As pessoas permitidas são:");
+    for(pessoa of pessoasPermitidas) {
+        console.log(pessoa)
+    }
+
+    console.log("As pessoas barradas são:");
+        for(pessoa of pessoasBarradas) {
+        console.log(pessoa)
+    }
+}
+
+temPermissao();
+*/
