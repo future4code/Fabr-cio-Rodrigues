@@ -149,6 +149,7 @@ let diferenca = x - y;
     console.log(arrayTreatment(array));
 
 /* EXERCÍCIO 2
+
     const hello = function() {
         alert("Hello Future4");
     }
@@ -159,6 +160,7 @@ let diferenca = x - y;
 /* EXERCÍCIOS DE OBJETOS */
 
 /* EXERCÍCIO 1 
+
 Os objetos são coleções de propriedades, que por sua vez mantém valores. As vezes estas propriedades
 podem manter funções, o que as tornarão métodos do objeto. Objetos em programação são úteis pois tentam 
 retratar objetos da vida real, de forma que o programa consiga manipular sua utilidade no código.
@@ -171,6 +173,7 @@ segurar um ou mais valores, mesmo que seja incerto se vamos precisar de mais do 
 */
 
 /* EXERCÍCIO 2
+
 function criaRetangulo(lado1, lado2) {
     const retangulo = {
       largura: lado1,
@@ -184,6 +187,7 @@ function criaRetangulo(lado1, lado2) {
 */
 
 /* EXERCÍCIO 3 
+
 const filme = {
     titulo: "Scarface",
     ano: 1983,
@@ -195,6 +199,7 @@ alert(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${
 */
 
 /* EXERCÍCIO 4 
+
 const pessoa = {
     nome: "Jéssica",
     idade: 34,
@@ -218,6 +223,7 @@ function anonimizarPessoa (pessoa) {
 /* EXERCÍCIOS DE FUNÇÕES DE ARRAY */
 
 /* EXERCÍCIO 1
+
 let pessoas = [
   { nome: "Pedro", idade: 20 },
   { nome: "João", idade: 10 },
@@ -235,6 +241,7 @@ const apenasCriancas = pessoas.filter((pessoa) => {
 */
 
 /* EXERCÍCIO 2
+
 const arr = [1, 2, 3, 4, 5, 6];
 let newArr = [];
 let newArr2 = [];
@@ -272,6 +279,7 @@ function arrayIsPair() {
 
 
 /* EXERCÍCIO 3
+
 const pessoas = [
   { nome: "Paula", idade: 12, altura: 1.8 },
   { nome: "João", idade: 20, altura: 1.3 },
@@ -307,3 +315,29 @@ function temPermissao() {
 
 temPermissao();
 */
+
+/* EXERCÍCIO 4 
+
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+function enviaEmail() {
+    consultas.forEach((consulta) => {
+        if(consulta.cancelada == false && consulta.genero === "masculino") {
+            console.log(`Olá, Sr. ${consulta.nome}. Estamos enviando esta mensagem para lembrá-lo da sua consulta no dia ${consulta.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`)
+        } else if (consulta.cancelada == false && consulta.genero === "feminino") {
+            console.log(`Olá, Sra. ${consulta.nome}. Estamos enviando esta mensagem para lembrá-la da sua consulta no dia ${consulta.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`)
+        } else if (consulta.cancelada == true && consulta.genero === "masculino") {
+            console.log(`Olá, Sr. ${consulta.nome}. Infelizmente, sua consulta marcada para o dia ${consulta.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+        } else if (consulta.cancelada == true && consulta.genero === "feminino") {
+            console.log(`Olá, Sra. ${consulta.nome}. Infelizmente, sua consulta marcada para o dia ${consulta.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+        }
+    })
+}
+*/
+
+/* EXERCÍCIO 5 */
