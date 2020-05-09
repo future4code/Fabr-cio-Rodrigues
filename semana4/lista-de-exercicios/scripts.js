@@ -194,7 +194,7 @@ const filme = {
 alert(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}!`);
 */
 
-/* EXERCÍCIO 4
+/* EXERCÍCIO 4 
 
 
 
