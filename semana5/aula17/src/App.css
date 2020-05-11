@@ -2,6 +2,8 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
+    background-color: rgb(24, 24, 24);
+    color: #fff;
 }
 
 
@@ -12,10 +14,9 @@ body {
 }
 
 header {
-    background-color: orange;
+    background-color: rgb(32, 32, 32);
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 50px;
     height: 10%;
 }
@@ -25,13 +26,43 @@ main {
     display: flex;
 }
 
+#searchBar {
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#campoDeBusca {
+    background-color: rgb(18, 18, 18);
+    border: 1px solid rgb(48, 48, 48);
+    height: 4vh;
+    width: 35vw;
+}
+
+input[type="text"]::placeholder {  
+    color: rgb(105, 105, 105);
+}
+
+#buscaBtn {
+    width: 2.5vw;
+    height: 4.5vh;
+    background-color: rgb(18, 18, 18);
+    border: 1px solid rgb(48, 48, 48);
+}
+
+#buscaBtn > img {
+    width: 15px;
+    height: 15px;
+}
+
 .menu-vertical {
     flex-basis: 200px;
     border-right-style: solid;
     border-right-width: thin;
 }
 
-.botoes-meunu-vertical {
+.botoes-menu-vertical {
     list-style-type: none;
 }
 

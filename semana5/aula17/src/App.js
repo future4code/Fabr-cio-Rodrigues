@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -9,22 +8,24 @@ function App() {
   }
 
   return (
-
     <div className="tela-inteira">
       <header>
-        <h1>Lab Tube</h1>
-        <input type="text" placeholder="Busca" id="campoDeBusca" />
+        <h1>LabTube</h1>
+        <div id="searchBar">
+          <input type="text" placeholder="Pesquisar" id="campoDeBusca" />
+          <button id="buscaBtn"><img src="https://images.vexels.com/media/users/3/132068/isolated/preview/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png" alt=""/></button>
+        </div>
       </header>
 
       <main>
         <nav className="menu-vertical">
           <ul>
-            <li className="botoes-meunu-vertical">Início</li>
-            <li className="botoes-meunu-vertical">Em alta</li>
-            <li className="botoes-meunu-vertical">Inscrições</li>
+            <li className="botoes-menu-vertical">Início</li>
+            <li className="botoes-menu-vertical">Em alta</li>
+            <li className="botoes-menu-vertical">Inscrições</li>
             <hr />
-            <li className="botoes-meunu-vertical">Originais</li>
-            <li className="botoes-meunu-vertical">Histórico</li>
+            <li className="botoes-menu-vertical">Originais</li>
+            <li className="botoes-menu-vertical">Histórico</li>
           </ul>
         </nav>
 
