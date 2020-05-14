@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <title>Aula 16</title>
+</head>
+<body>
+    <header class="header"> 
+        <div id="logo">
+            <a href="#">LBNubank</a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Meu Perfil</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <section>
+    <div class="h1"><h1>Controlador de despesas</h1></div>
+    </section>   
+    <section>
+
+         <!-- CONTROLADOR DE DESPESAS-->
+
+        <div class="controlador">
+        <div id="controlador-texto">
+            <label>Valor</label>
+            <label>Tipo (casa, comida, transporte, alimentação, outros)</label>
+            <label>Descrição</label>
+        </div>
+        <div id="controlador-valores">
+            <input id="controlador-valor" type="text" placeholder="Insira o valor em reais:">
+            <select id="controlador-tipo"> 
+                <option>Despesas de casa</option> 
+                <option>Despesas de festas</option> 
+                <option>Despesas de alimentação</option> 
+                <option>Despesas com transporte</option> 
+                <option>Outros</option>
+            </select>
+            <input id="controlador-descricao" type="text" onkeydown="enterBotaoCadastro(event)" placeholder="Insira uma descrição:">
+        </div>
+        </div>
+        <button id="controlador-btn" class="btn" onclick="cliqueBotaoCadastro()">Cadastrar</button>
+
+        <!-- DESPESAS DETALHADAS-->
+
+        <div class="h1"><h1>Despesas detalhadas</h1></div>
+        <div class="despesas">
+        <div id="despesas-texto">
+            <label>Tipo (casa, comida, transporte, alimentação, outros)</label>
+            <label>Valor mínimo</label>
+            <label>Valor máximo</label>
+        </div>
+        <div id="despesas-valores">
+            <select id="despesas-tipo"> 
+                <option>Despesas de casa</option> 
+                <option>Despesas de festas</option> 
+                <option>Despesas de alimentação</option> 
+                <option>Despesas com transporte</option> 
+                <option>Outros</option>
+            </select>
+            <input id="valor-min" type="text" placeholder="Insira o valor mínimo:">
+            <input id="valor-max" type="text" placeholder="Insira o valor máximo:">
+        </div>
+        </div>
+        <div id="despesas-lista-div">
+        <ul id="despesas-lista">
+            <li id="despesas-lista-header"><p>Valor</p><p>Tipo</p><p>Descrição</p></li>
+
+        </ul>
+        </div>
+        <button id="despesas-btn" onclick="cliqueDespesasDetalhadas()" class="btn">Cadastrar</button>
+
+        <!-- EXTRATO -->
+
+        <div class="h1"><h1>Extrato</h1></div>
+        <div class="extrato">
+            <p>Valor total: R$</p><p id="valor-total"></p>
+        </div>
+    </section>
+</body>
+</html>

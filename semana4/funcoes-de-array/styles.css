@@ -1,0 +1,145 @@
+body, li {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+#logo {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    background-color: #8d1dde;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+}
+section {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.h1 {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#controlador-texto {
+    margin-right: 0;
+    border: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border-right: none;
+    justify-content: flex-end;
+}
+
+#controlador-valores {
+    border: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#despesas-valores {
+    border: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#despesas-texto {
+    margin-right: 0;
+    border: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border-right: none;
+}
+
+.despesas {
+    margin-left: 5px;
+    display: flex;
+}
+
+.controlador {
+    margin-left: 5px;
+    display: flex;
+}
+
+.extrato {
+    margin-left: 5px;
+    display: flex;
+}
+
+#extrato-valores {
+    border: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+#extrato-texto {
+    margin-right: 0;
+    border: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border-right: none;
+}
+
+.btn { 
+    margin-left: 5px;
+    width: 36.7%;
+}
+
+#despesas-lista-div {
+}
+
+#despesas-lista-header {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#despesas-lista {
+    margin: 0;
+    margin-left: 5px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 36.25%;
+}
+
+
+
