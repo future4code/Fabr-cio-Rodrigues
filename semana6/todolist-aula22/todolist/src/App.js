@@ -41,13 +41,13 @@ class App extends React.Component {
 
   componentDidUpdate() {
     const novaTarefaSalva = this.state;
+
     localStorage.setItem("tarefa", JSON.stringify(novaTarefaSalva));
   };
 
   componentDidMount() {
     const tarefaString = localStorage.getItem("tarefa")
     const tarefaObjeto = JSON.parse(tarefaString)
-    console.log(tarefaObjeto.texto);
   };
 
   onChangeInput = (event) => {
