@@ -27,12 +27,6 @@ class App extends React.Component {
           texto: 'Texto da tarefa',
           completa: false,
         }, 
-        
-        {
-            id: Date.now(),
-            texto: 'Texto da tarefa II',
-            completa: true,
-        }
       ],
       valorInputTarefa: '',
       filter: '',
@@ -40,14 +34,19 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-    const novaTarefaSalva = this.state;
+    const listaAtualizada = this.state.tarefas;
 
-    localStorage.setItem("tarefa", JSON.stringify(novaTarefaSalva));
+    localStorage.setItem("lista", JSON.stringify(listaAtualizada));
   };
 
   componentDidMount() {
-    const tarefaString = localStorage.getItem("tarefa")
-    const tarefaObjeto = JSON.parse(tarefaString)
+    const listaNoLocalStorage = localStorage.getItem("lista");
+    const tarefasObjeto = JSON.parse(listaNoLocalStorage)
+
+    const tarefasAtualizadas = [tarefasObjeto, ...this.state.tarefas];
+
+    this.setState({ tarefas: tarefasAtualizadas })
+    console.log(tarefasObjeto)
   };
 
   onChangeInput = (event) => {
@@ -56,20 +55,36 @@ class App extends React.Component {
   }
 
   criaTarefa = () => {
-    const novaTarefa = {
-      id: Date.now(),
-      texto: this.state.valorInputTarefa,
-      completa: false,
-    };
+    if (this.state.valorInputTarefa !== "") {
+      const novaTarefa = {
+        id: Date.now(),
+        texto: this.state.valorInputTarefa,
+        completa: false,
+      };
 
-    const novasTarefas = [novaTarefa, ...this.state.tarefas];
+      const novasTarefas = [novaTarefa, ...this.state.tarefas];
 
-    this.setState({ tarefas: novasTarefas })
-    this.setState({ valorInputTarefa: "" })
-  }
+      this.setState({ tarefas: novasTarefas })
+      this.setState({ valorInputTarefa: "" })
+   } else {
+     alert("O espaço para adicionar uma tarefa não pode estar em branco!")
+   }
+}
 
   selectTarefa = (id) => {
-    console.log(id)
+    const novaListaDeTarefas = this.state.tarefas.map((tarefa) => {
+      if(id === tarefa.id) {
+        const novaTarefa = {
+          ...tarefa,
+          completa: !tarefa.completa
+        }
+        return novaTarefa
+      } else {
+        return tarefa
+      }
+    })
+
+    this.setState({tarefas: novaListaDeTarefas})
   }
 
   onChangeFilter = (event) => {
