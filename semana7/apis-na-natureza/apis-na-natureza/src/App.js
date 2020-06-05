@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
+import ReactAudioPlayer from "react-audio-player";
+import pokeMusic from "./audios/pokemonAudio.mp3";
 
 const PokemonContainer = styled.div`
   font-family: sans-serif;
@@ -11,11 +13,22 @@ const PokemonContainer = styled.div`
 `;
 
 const PokemonHeader = styled.div`
+  background-image: url("https://free4kwallpapers.com/uploads/originals/2019/08/21/simple-sunset-wallpaper.jpg");
   font-family: sans-serif;
   text-align: center;
+  color: white;
+`;
+
+const MusicContainer = styled.div`
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 `;
 
 const PokemonMainContainer = styled.div`
+  height: 79.1vh;
   display: flex;
   flex-direction: column;
 `;
@@ -26,14 +39,25 @@ const PokeImage = styled.img`
 `;
 
 const FightButton = styled.button`
-  background-color: purple;
-  margin-top: 50px;
+  background-color: red;
+  text-align: center;
   margin: 0 auto;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 20px;
   font-size: 16px;
-  width: 10%;
+  width: 6.3%;
+`;
+
+const LangButton = styled.button`
+  background-color: red;
+  margin: 0 auto;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  width: 20%;
+  margin-bottom: 10px;
 `;
 
 export class App extends React.Component {
@@ -143,12 +167,72 @@ export class App extends React.Component {
     }
   };
 
+  pokemonFightEnglish = () => {
+    if (
+      this.state.pokemonOneType === "water" &&
+      this.state.pokemonTwoType === "fire"
+    ) {
+      alert("The first pokémon won!");
+    } else if (
+      this.state.pokemonOneType === "fire" &&
+      this.state.pokemonTwoType === "water"
+    ) {
+      alert("The second pokémon won!");
+    } else if (
+      this.state.pokemonOneType === "water" &&
+      this.state.pokemonTwoType === "grass"
+    ) {
+      alert("The first pokémon won!");
+    } else if (
+      this.state.pokemonOneType === "grass" &&
+      this.state.pokemonTwoType === "water"
+    ) {
+      alert("The second pokémon won!");
+    } else if (
+      this.state.pokemonOneType === "fire" &&
+      this.state.pokemonTwoType === "grass"
+    ) {
+      alert("The first pokémon won!");
+    } else if (
+      this.state.pokemonOneType === "grass" &&
+      this.state.pokemonTwoType === "fire"
+    ) {
+      alert("The second pokémon won!");
+    } else if (
+      this.state.pokemonOneType === "electric" &&
+      this.state.pokemonTwoType === "water"
+    ) {
+      alert("The first pokémon won!");
+    } else if (
+      this.state.pokemonOneType === "water" &&
+      this.state.pokemonTwoType === "electric"
+    ) {
+      alert("The second pokémon won!");
+    } else if (
+      this.state.pokemonOneType === "psychic" &&
+      this.state.pokemonTwoType !== "psychic"
+    ) {
+      alert("The first pokémon won!");
+    } else if (
+      this.state.pokemonTwoType === "psychic" &&
+      this.state.pokemonOneType !== "psychic"
+    ) {
+      alert("The second pokémon won!");
+    } else if (this.state.pokemonOneType === this.state.pokemonTwoType) {
+      alert("It's a draw!");
+    } else {
+      alert(
+        "One or two of the selected pokémons aren't from the specified types!\nChoose a water, fire or grass pokémon."
+      );
+    }
+  };
+
   changeLangToEnglish = () => {
-    this.setState({ langSelected: this.state.langSelected === "english" });
+    this.setState({ langSelected: "english" });
   };
 
   changeLangToPortuguese = () => {
-    this.setState({ langSelected: this.state.langSelected === "portuguese" });
+    this.setState({ langSelected: "portuguese" });
   };
 
   render() {
@@ -167,9 +251,18 @@ export class App extends React.Component {
     if (this.state.langSelected === "portuguese") {
       return (
         <PokemonHeader>
-          <button onClick={this.changeLangToEnglish}>
-            Change the language to English
-          </button>
+          <LangButton onClick={this.changeLangToEnglish}>
+            Change language to English
+          </LangButton>
+          <MusicContainer>
+            <ReactAudioPlayer
+              src={pokeMusic}
+              autoPlay={true}
+              loop={true}
+              controls
+              volume={0.3}
+            />
+          </MusicContainer>
           <h2>
             Selecione dois pokémons do tipo água, fogo ou grama para lutar!
           </h2>
@@ -198,9 +291,18 @@ export class App extends React.Component {
     } else if (this.state.langSelected === "english") {
       return (
         <PokemonHeader>
-          <button onClick={this.changeLangToPortuguese}>
+          <LangButton onClick={this.changeLangToPortuguese}>
             Mudar a língua para português
-          </button>
+          </LangButton>
+          <MusicContainer>
+            <ReactAudioPlayer
+              src={pokeMusic}
+              controls
+              autoPlay={true}
+              loop={true}
+              volume={0.3}
+            />
+          </MusicContainer>
           <h2>Select two pokémons of water, fire or grass types to fight!</h2>
           <PokemonMainContainer>
             <PokemonContainer>
@@ -220,7 +322,7 @@ export class App extends React.Component {
               </select>
               <div>{imageTwo}</div>
             </PokemonContainer>
-            <FightButton onClick={this.pokemonFight}>Lutar!</FightButton>
+            <FightButton onClick={this.pokemonFightEnglish}>Fight!</FightButton>
           </PokemonMainContainer>
         </PokemonHeader>
       );
