@@ -2,9 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
 
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./Theme";
 import {
   MainContainer,
   Screen,
+  ListItemHover,
   ButtonsContainer,
   Box,
   Header,
@@ -13,6 +16,7 @@ import {
 
 import Button from "@material-ui/core/Button";
 import Back from "@material-ui/icons/ArrowBackIos";
+import Clear from "@material-ui/icons/Clear";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -24,18 +28,18 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 function UsersList(props) {
-  const { changePage } = props;
+  const { changePage, currentTheme } = props;
 
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
     getMatches();
-  }, []);
+  }, [matches]);
 
   function getMatches() {
     axios
       .get(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fabricio/matches"
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fabriciorodrigues/matches"
       )
       .then((response) => {
         setMatches(response.data.matches);
@@ -47,27 +51,34 @@ function UsersList(props) {
   }
 
   function cleanMatches() {
-    axios
-      .put(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fabricio/clear"
-      )
-      .then((response) => {
-        getMatches();
-      })
-      .catch((e) => {
-        alert("ERRO AO APAGAR MATCHES");
-        console.log("erro: " + e);
-      });
+    if (window.confirm("Deseja mesmo resetar todos os matches?")) {
+      axios
+        .put(
+          "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fabriciorodrigues/clear"
+        )
+        .then((response) => {
+          getMatches();
+        })
+        .catch((e) => {
+          alert("ERRO AO APAGAR MATCHES");
+          console.log("erro: " + e);
+        });
+    }
   }
 
   return (
-    <div className="App">
+    <ThemeProvider theme={currentTheme === "light" ? lightTheme : darkTheme}>
       <MainContainer>
         <Header>
           <Logo>AstroMatch</Logo>
           <Box>
-            <Button variant="outlined" onClick={() => cleanMatches()}>
-              X
+            <Button
+              style={{ width: 30, height: 40 }}
+              variant="outlined"
+              color="secondary"
+              onClick={() => cleanMatches()}
+            >
+              <Clear />
             </Button>
             <Button
               style={{ width: 30, height: 40 }}
@@ -76,7 +87,7 @@ function UsersList(props) {
               onClick={() => changePage("usersList")}
             >
               {" "}
-              <Back />
+              <Back style={{ position: "fixed", left: 280 }} />
             </Button>
           </Box>
         </Header>
@@ -103,21 +114,27 @@ function UsersList(props) {
                   )}
                   {matches.map((match) => {
                     return (
-                      <ListItem>
-                        <ListItemAvatar>
-                          <Avatar>
-                            <img
-                              src={match.photo}
-                              alt=""
-                              style={{ maxWidth: 100, maxHeight: 100 }}
+                      <ListItemHover>
+                        <ListItem>
+                          <ListItemAvatar>
+                            <Avatar>
+                              <img
+                                src={match.photo}
+                                alt=""
+                                style={{ maxWidth: 100, maxHeight: 100 }}
+                              />
+                            </Avatar>
+                          </ListItemAvatar>
+                          {currentTheme === "light" ? (
+                            <ListItemText
+                              primary={match.name}
+                              style={{ color: "black" }}
                             />
-                          </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText
-                          primary={match.name}
-                          style={{ color: "black" }}
-                        />
-                      </ListItem>
+                          ) : (
+                            <ListItemText primary={match.name} />
+                          )}
+                        </ListItem>
+                      </ListItemHover>
                     );
                   })}
                 </List>
@@ -129,11 +146,15 @@ function UsersList(props) {
           <Button
             size="large"
             variant="outlined"
-            style={{ color: "#ff002f", borderRadius: 100 }}
+            style={{
+              color: "#ff002f",
+              borderRadius: 100,
+              backgroundColor: "gray",
+            }}
           ></Button>
         </ButtonsContainer>
       </MainContainer>
-    </div>
+    </ThemeProvider>
   );
 }
 

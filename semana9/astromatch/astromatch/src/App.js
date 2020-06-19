@@ -6,6 +6,7 @@ import UsersList from "./Components/Layouts/UsersList/UsersList";
 
 function App() {
   const [currentPage, setPage] = useState("home");
+  const [theme, setTheme] = useState("light");
 
   function changePage() {
     if (currentPage === "home") {
@@ -15,11 +16,25 @@ function App() {
     }
   }
 
+  function toggleTheme() {
+    if (theme === "light") {
+      setTheme("dark");
+    } else if (theme === "dark") {
+      setTheme("light");
+    }
+  }
+
   function renderPage() {
     if (currentPage === "home") {
-      return <Home changePage={changePage} />;
+      return (
+        <Home
+          changePage={changePage}
+          newTheme={toggleTheme}
+          currentTheme={theme}
+        />
+      );
     } else if (currentPage === "usersList") {
-      return <UsersList changePage={changePage} />;
+      return <UsersList changePage={changePage} currentTheme={theme} />;
     }
   }
 

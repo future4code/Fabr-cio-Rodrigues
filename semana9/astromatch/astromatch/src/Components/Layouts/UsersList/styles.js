@@ -2,21 +2,33 @@ import React from "react";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  color: white;
+  background: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
   width: 400px;
   height: 700px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid black;
   border-radius: 50px;
-  background-color: white;
+  border: ${({ theme }) => theme.border};
   box-shadow: 0 0 5px #0000000f;
+
+  @media (max-width: 320px) {
+    width: 320px;
+    height: 600px;
+    border: none;
+  }
+
+  @media (max-width: 360px) {
+    width: 360px;
+    height: 550px;
+    border: none;
+  }
 `;
 
 export const Screen = styled.div`
-  color: black;
+  color: ${({ theme }) => theme.text};
   width: 375px;
   height: 475px;
   position: fixed;
@@ -27,13 +39,32 @@ export const Screen = styled.div`
   border-left: none;
   border-bottom: none;
   border-right: none;
-  background-color: white;
+  background-color: ${({ theme }) => theme.screen};
   box-shadow: 0 0 5px #0000000f;
+
+  @media (max-width: 320px) {
+    width: 295px;
+    height: 375px;
+  }
+
+  @media (max-width: 370px) {
+    width: px;
+    height: 375px;
+  }
 `;
 
 export const Image = styled.img`
   width: 375px;
   height: 475px;
+`;
+
+export const ListItemHover = styled.div`
+  margin: 0%;
+  width: 375px;
+
+  &:hover {
+    background-color: #f50057;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -47,7 +78,7 @@ export const ButtonsContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.buttonsContainer};
 `;
 
 export const Box = styled.div`
@@ -63,10 +94,10 @@ export const Box = styled.div`
 export const Header = styled.div``;
 
 export const Logo = styled.p`
-  color: black;
+  color: #f50057;
   position: fixed;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
+  font-family: "Satisfy", cursive;
+  font-size: 20pt;
   left: 50%;
   top: 1%;
   transform: translate(-50%, -50%);
