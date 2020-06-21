@@ -60,6 +60,8 @@ export const MatchHeader = styled.h1`
   left: 50%;
   top: 10%;
   transform: translate(-50%, -50%);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 `;
 
 export const MatchText = styled.h1`
@@ -72,6 +74,8 @@ export const MatchText = styled.h1`
   left: 50%;
   top: 25%;
   transform: translate(-50%, -50%);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 `;
 
 export const Image = styled.img`

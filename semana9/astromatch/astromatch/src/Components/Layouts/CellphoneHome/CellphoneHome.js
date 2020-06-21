@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import AppsColumn from "./AppsColumn";
 
 import Clock from "react-live-clock";
@@ -66,26 +66,26 @@ function CellphoneHome(props) {
           <AppsColumn goBack={goBack} />
         </Screen>
         <ButtonsContainer>
-          <Button
-            size="small"
-            variant="contained"
-            style={{ borderRadius: 100, height: 50 }}
-          ></Button>
-          <Button
-            size="small"
-            variant="contained"
-            style={{ borderRadius: 100, height: 50 }}
-          ></Button>
-          <Button
-            size="small"
-            variant="contained"
-            style={{ borderRadius: 100, height: 50 }}
-          ></Button>
-          <Button
-            size="small"
-            variant="contained"
-            style={{ borderRadius: 100, height: 50 }}
-          ></Button>
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-512/phone-1559-461603.png"
+            alt=""
+            style={{ width: 50, height: 50 }}
+          />
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/messages-18-461599.png"
+            alt=""
+            style={{ width: 50, height: 50 }}
+          />
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/news-364-461600.png"
+            alt=""
+            style={{ width: 50, height: 50 }}
+          />
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/settings-409-461608.png"
+            alt=""
+            style={{ width: 50, height: 50 }}
+          />
         </ButtonsContainer>
       </MainContainer>
     </ThemeProvider>

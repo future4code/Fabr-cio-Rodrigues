@@ -84,7 +84,7 @@ export default function AppsColumn(props) {
         <Grid item md={3}>
           <AppIcon style={{ width: 55, height: 55 }}>
             <img
-              src="https://lh3.googleusercontent.com/proxy/Muw815qn1F9kyz6xXRA4kgycPlgLSVbFnngB3zj2T0lGnmAvrUdW46uk1OOAkpNjmDyJHM-72S7mPCw0iRSah2XAOBOxKcZQz8SsLOn98PXNyNfKEeJMj3-v1bZXavbAsA95zPjzDe1Qv2NWfNAU-KH2o2zw5QtxTg_huyiADGyisCc0ubO_KAM5Zr6PNPE51tDsdheb"
+              src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"
               alt=""
               style={{ width: 55, height: 55 }}
             />
@@ -147,7 +147,7 @@ export default function AppsColumn(props) {
         <Grid item md={3}>
           <AppIcon style={{ width: 55, height: 55 }}>
             <img
-              src="https://lh3.googleusercontent.com/proxy/hOr7Ete-HzR_OIwH1sA9VLyWev6zCst9Bi1-5LhF7U5EypOwP7N5YYy7SUfEN1WkAMKtMXsDTlS3SWkGXeqvVMG8Ov95_6LH4ShotWBcCnzuWDSLubXxJIAl041uhvpmzpbjwzqNx9H-saUN"
+              src="https://cdn.iconscout.com/icon/free/png-256/skype-1411851-1194340.png"
               alt=""
               style={{ width: 55, height: 55 }}
             />
@@ -165,7 +165,7 @@ export default function AppsColumn(props) {
         <Grid item md={3}>
           <AppIcon style={{ width: 55, height: 55 }}>
             <img
-              src="https://lh3.googleusercontent.com/proxy/wIhKrTVpG-Jt23fi5dQ17KsjYvgOsXdHrJcpOROpR7HsqlmF_AeJhLmnfKIhYi6zPImOT2gfkLtxwcpUx82gku-fxdqTEEJiejNB1cmvDsPifUtf2CIsdskR_vLyBdV4NHETR3EdX6h0kkpsXw"
+              src="https://cdn.iconscout.com/icon/free/png-512/telegram-1868973-1583137.png"
               alt=""
               style={{ width: 55, height: 55 }}
             />
