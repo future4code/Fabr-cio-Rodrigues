@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const FiltersContainer = styled.div`
-  border: 1px solid black;
   padding: 8px;
 `;
 
@@ -13,28 +12,38 @@ const InputContainer = styled.label`
   margin-bottom: 8px;
 `;
 
-function Categories() {
+function Categories(props) {
+  const {
+    planetFilter,
+    durationFilter,
+    onChangePlanetFilter,
+    onChangeDurationFilter,
+  } = props;
+
   return (
     <FiltersContainer>
-      <h3>EAE</h3>
+      <h3>Filtrar</h3>
       <div>
         <InputContainer>
-          Valor mínimo
-          <input type="number" />
+          Planeta
+          <input
+            type="text"
+            value={planetFilter}
+            onChange={onChangePlanetFilter}
+          />
         </InputContainer>
       </div>
       <div>
         <InputContainer>
-          Valor mínimo
-          <input type="number" />
+          Duração
+          <input
+            type="text"
+            value={durationFilter}
+            onChange={onChangeDurationFilter}
+          />
         </InputContainer>
       </div>
-      <div>
-        <InputContainer>
-          Valor mínimo
-          <input type="number" />
-        </InputContainer>
-      </div>
+      <div></div>
     </FiltersContainer>
   );
 }

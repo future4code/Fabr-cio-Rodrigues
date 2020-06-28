@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import TripDetailsPage from "../TripDetailsPage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,20 +14,26 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
-    height: "200px",
-    border: "1px solid red",
+    height: "225px",
   },
 }));
 
-const ProductsGrid = () => {
+const ProductsGrid = (props) => {
+  const { planetFilter, durationFilter } = props;
   const classes = useStyles();
   const [trips, setTrips] = useState([]);
-  const [currentTripId, setCurrentTripId] = useState(0);
-  const [tripDetailsUnmount, setTripDetailsUnmount] = useState(false);
   const history = useHistory();
+
+  const getFilteredAndOrderedList = () => {
+    return (
+      trips.filter((trip) => trip.durationInDays > durationFilter) &&
+      trips.filter((trip) => trip.planet.includes(planetFilter))
+    );
+  };
 
   useEffect(() => {
     getAllTrips();
+    getFilteredAndOrderedList();
   });
 
   const getAllTrips = () => {
@@ -44,27 +49,53 @@ const ProductsGrid = () => {
       });
   };
 
-  const goToTripDetails = () => {
-    history.push(`/application-form`);
+  const goToTripApplicationForm = (tripId) => {
+    history.push(`/application-form/${tripId}`);
   };
+
+  const filteredAndOrderedList = getFilteredAndOrderedList();
 
   return (
     <div className={classes.root}>
+      <h2 style={{ textAlign: "left" }}>
+        Quantidade de viagens encontradas: {filteredAndOrderedList.length}{" "}
+      </h2>
       <Grid container spacing={3}>
-        {trips.map((trip) => {
+        {filteredAndOrderedList.map((trip) => {
           return (
             <Grid item xs={3}>
               <Paper className={classes.paper}>
-                {trip.name}
-                <p>{trip.durationInDays}</p>
-                <p>{trip.planet}</p>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={() => goToTripDetails(trip.id)}
+                <p style={{ fontWeight: "bold", color: "black" }}>
+                  {trip.name}
+                </p>
+                <div
+                  style={{
+                    textAlign: "left",
+                  }}
                 >
-                  Candidatar-se
-                </Button>
+                  <div>
+                    <p>Duração: {trip.durationInDays} dias</p>
+                    <p>Planeta: {trip.planet}</p>
+
+                    <p>Data: {trip.date}</p>
+                  </div>
+                  <div
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-end",
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={() => goToTripApplicationForm(trip.id)}
+                    >
+                      Candidatar-se
+                    </Button>
+                  </div>
+                </div>
               </Paper>
             </Grid>
           );

@@ -1,13 +1,61 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import useForm from "../../services/useForm";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
+import { useHistory, useParams } from "react-router-dom";
 import Container from "@material-ui/core/Container";
-import axios from "axios";
+
+const baseUrl =
+  "https://us-central1-labenu-apis.cloudfunctions.net/labeX/fabricio-rodrigues-mello";
 
 function ApplyToTripPage() {
-  const { form, onChange, resetForm } = useForm({});
-  const tripId = "1eW09MsidYoNyivFdClS";
+  const [token, setToken] = useState(null);
+
+  const pathParams = useParams();
+  const tripId = pathParams.id;
+  const history = useHistory();
+
+  const { form, onChange, resetForm } = useForm({
+    name: "",
+    age: "",
+    applicationText: "",
+    profession: "",
+    country: "",
+  });
+
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+    setToken(token);
+
+    console.log(token);
+  }, [history]);
+
+  function applyToTrip() {
+    const axiosConfig = {
+      headers: {
+        auth: token,
+      },
+    };
+
+    console.log(axiosConfig);
+    const body = {
+      name: form.name,
+      age: form.age,
+      applicationText: form.applicationText,
+      profession: form.profession,
+      country: form.country,
+    };
+
+    axios
+      .post(`${baseUrl}/trips/${tripId}/apply`, body, axiosConfig)
+      .then(() => {
+        alert("Aplicação enviada com sucesso!");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -24,19 +72,7 @@ function ApplyToTripPage() {
     // Redirecionar de tela
 
     console.log(form);
-  };
-
-  const applyToTrip = () => {
-    const token = window.localStorage.getItem("token");
-
-    axios
-      .get(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/fabricio-rodrigues-mello/trip/${tripId}/apply`
-      )
-      .then((response) => {})
-      .catch((e) => {
-        console.log(e);
-      });
+    applyToTrip();
   };
 
   return (
@@ -46,6 +82,7 @@ function ApplyToTripPage() {
         <Typography
           component="div"
           style={{
+            borderRadius: 25,
             backgroundColor: "#cfe8fc",
             height: "60vh",
             marginTop: "25%",
@@ -55,7 +92,11 @@ function ApplyToTripPage() {
             alignItems: "center",
           }}
         >
-          <Typography variant="h5" component="h1">
+          <Typography
+            variant="h5"
+            component="h1"
+            style={{ fontFamily: "Segoe UI" }}
+          >
             Formulário de aplicação
           </Typography>
 
@@ -71,10 +112,10 @@ function ApplyToTripPage() {
           >
             <input
               name="name"
-              placeholder="Primeiro Nome"
+              placeholder="Primeiro nome"
               value={form.name}
               type="text"
-              pattern="[A-Za-z ]{3,}"
+              pattern="[A-zà-ÿ]{3,}"
               onChange={handleInputChange}
               required
             />
@@ -88,10 +129,10 @@ function ApplyToTripPage() {
               required
             />
             <input
-              name="text"
+              name="applicationText"
               placeholder="Texto de aplicação"
               value={form.applicationText}
-              pattern="{30,}"
+              pattern="[A-zà-ÿ]{3,}"
               type="text"
               onChange={handleInputChange}
               required
@@ -100,7 +141,7 @@ function ApplyToTripPage() {
             <input
               name="profession"
               placeholder="Profissão"
-              pattern="{10,}"
+              pattern="[A-zà-ÿ]{10,}"
               value={form.profession}
               type="text"
               onChange={handleInputChange}

@@ -19,7 +19,7 @@ function LoginPage() {
     const token = window.localStorage.getItem("token");
 
     if (token !== null) {
-      history.push("/trips/create");
+      history.push("/admin");
     }
   }, [history]);
 
@@ -43,6 +43,7 @@ function LoginPage() {
 
       alert("Bem-vindo!");
       history.push("/admin");
+      window.location.reload(true);
     } catch (error) {
       console.log(error);
       alert("Infelizmente, algo deu errado, tente novamente.");
