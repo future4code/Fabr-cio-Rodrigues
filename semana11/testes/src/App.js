@@ -4,6 +4,7 @@ import { Post } from "./components/Post";
 
 const App = () => {
   const [postsList, setPostsList] = useState([]);
+  const [warning, setWarning] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
   const onChangeInput = (event) => {
@@ -12,16 +13,21 @@ const App = () => {
 
   const addPost = () => {
     // Adiciona um post à lista
-    const newPost = {
-      id: Date.now(),
-      text: inputValue,
-      liked: false,
-    };
+    if (inputValue !== "") {
+      const newPost = {
+        id: Date.now(),
+        text: inputValue,
+        liked: false,
+      };
 
-    const newPostsList = [newPost, ...postsList];
+      const newPostsList = [newPost, ...postsList];
 
-    setPostsList(newPostsList);
-    setInputValue("");
+      setPostsList(newPostsList);
+      setInputValue("");
+      setWarning(false);
+    } else {
+      setWarning(true);
+    }
   };
 
   const deletePost = (postId) => {
@@ -62,14 +68,28 @@ const App = () => {
         <button onClick={addPost}>Adicionar</button>
       </div>
       <br />
+      {warning === true && (
+        <div>
+          <strong>AVISO:</strong> um post deve conter ao menos um caractér!
+        </div>
+      )}
+
+      {postsList.length === 0 ? (
+        <div> Não há nenhum post. </div>
+      ) : (
+        <div> Quantidade de posts: {postsList.length}</div>
+      )}
+
       {postsList.map((post) => {
         return (
-          <Post
-            key={post.id}
-            post={post}
-            toggleLike={toggleLike}
-            deletePost={deletePost}
-          />
+          <div>
+            <Post
+              key={post.id}
+              post={post}
+              toggleLike={toggleLike}
+              deletePost={deletePost}
+            />
+          </div>
         );
       })}
     </div>
