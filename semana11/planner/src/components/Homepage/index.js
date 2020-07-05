@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const MainContainer = styled.div`
   display: flex;
@@ -7,7 +8,6 @@ const MainContainer = styled.div`
   width: 60%;
   justify-content: space-evenly;
   align-items: center;
-  border: 1px solid red;
 `;
 
 const WeekTasksContainer = styled.div`
@@ -18,56 +18,90 @@ const WeekTasksContainer = styled.div`
 
 const Item = styled.div``;
 
+const DeleteTaskContainer = styled.span`
+  cursor: pointer;
+`;
+
+const TasksContainer = styled.ul`
+  margin: 0 auto;
+  text-align: left;
+  border-bottom: 1px solid black;
+  width: 75%;
+`;
+
+const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/generic";
+
 const Homepage = () => {
   const [currentSelectedDay, setCurrentSelectedDay] = useState("");
+  const [tasks, setTasks] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  const [monday, setMonday] = useState([]);
-  const [tuesday, setTuesday] = useState([]);
-  const [wednesday, setWednesday] = useState([]);
-  const [thursday, setThursday] = useState([]);
-  const [friday, setFriday] = useState([]);
-  const [saturday, setSaturday] = useState([]);
-  const [sunday, setSunday] = useState([]);
 
   const onChangeInput = (event) => {
+    getTasks();
     setInputValue(event.target.value);
   };
 
-  useEffect(() => {}, []);
-
-  const onSubmit = () => {
-    if (currentSelectedDay === "Monday") {
-      setMonday(inputValue);
-    } else if (currentSelectedDay === "Tuesday") {
-      setTuesday(inputValue);
-    } else if (currentSelectedDay === "Wednesday") {
-      setWednesday(inputValue);
-    } else if (currentSelectedDay === "Thursday") {
-      setThursday(inputValue);
-    } else if (currentSelectedDay === "Friday") {
-      setFriday(inputValue);
-    } else if (currentSelectedDay === "Saturday") {
-      setSaturday(inputValue);
-    } else if (currentSelectedDay === "Sunday") {
-      setSunday(inputValue);
-    } else {
-      alert("Dia inválido!");
-    }
-  };
+  useEffect(() => {
+    getTasks();
+  }, []);
 
   const onChangeSelect = (event) => {
     setCurrentSelectedDay(event.target.value);
   };
+
+  const getTasks = () => {
+    axios
+      .get(`${baseUrl}/planner-mello-fabricio-rodrigues`)
+      .then((response) => {
+        setTasks(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  const createTask = () => {
+    const body = {
+      text: inputValue,
+      day: currentSelectedDay,
+    };
+
+    axios.post(`${baseUrl}/planner-mello-fabricio-rodrigues`, body).then(() => {
+      getTasks();
+      setInputValue("");
+    });
+  };
+
+  const deleteTask = (taskId) => {
+    if (window.confirm("Tem certeza que deseja deletar esta tarefa?")) {
+      axios
+        .delete(`${baseUrl}/planner-mello-fabricio-rodrigues/${taskId}`)
+        .then(() => {
+          getTasks();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    } else {
+    }
+  };
+
   return (
     <>
       <MainContainer>
         <label>
           Digite sua tarefa:
-          <input type="text" onChange={onChangeInput} />
+          <input
+            type="text"
+            placeholder="tarefa"
+            value={inputValue}
+            onChange={onChangeInput}
+          />
         </label>
 
-        <label>Selecione um dia da semana:</label>
-        <select onChange={onChangeSelect}>
+        <label for="select">Selecione um dia da semana:</label>
+        <select id="select" onChange={onChangeSelect}>
+          <option value="Monday"></option>
           <option value="Monday">Segunda</option>
           <option value="Tuesday">Terça</option>
           <option value="Wednesday">Quarta</option>
@@ -77,80 +111,136 @@ const Homepage = () => {
           <option value="Sunday">Domingo</option>
         </select>
 
-        <button onClick={onSubmit}>Adicionar</button>
-        <button onClick="limpaTarefa()">Limpar tarefas</button>
+        <button onClick={createTask}>Adicionar</button>
       </MainContainer>
 
       <WeekTasksContainer>
         <Item>
           <h4>Segunda</h4>
-          {monday.map((task) => {
-            return (
-              <ul>
-                <li>{task}</li>
-              </ul>
-            );
-          })}
+          {tasks
+            .filter((task) => task.day === "Monday")
+            .map((filteredTask) => (
+              <TasksContainer>
+                {filteredTask.text}
+                <DeleteTaskContainer
+                  onClick={() => deleteTask(filteredTask.id)}
+                >
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/61/61848.png"
+                    style={{ width: 24, height: 24, marginLeft: 5 }}
+                  />
+                </DeleteTaskContainer>
+              </TasksContainer>
+            ))}
         </Item>
         <Item>
           <h4>Terça</h4>
-          {tuesday.map((task) => {
-            return (
-              <ul>
-                <li>{task}</li>
-              </ul>
-            );
-          })}
+          {tasks
+            .filter((task) => task.day === "Tuesday")
+            .map((filteredTask) => (
+              <TasksContainer>
+                {filteredTask.text}
+                <DeleteTaskContainer
+                  onClick={() => deleteTask(filteredTask.id)}
+                >
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/61/61848.png"
+                    style={{ width: 24, height: 24, marginLeft: 5 }}
+                  />
+                </DeleteTaskContainer>
+              </TasksContainer>
+            ))}
         </Item>
         <Item>
           <h4>Quarta</h4>
-          {wednesday.map((task) => {
-            return (
-              <ul>
-                <li>{task}</li>
-              </ul>
-            );
-          })}
+          {tasks
+            .filter((task) => task.day === "Wednesday")
+            .map((filteredTask) => (
+              <TasksContainer>
+                {filteredTask.text}
+                <DeleteTaskContainer
+                  onClick={() => deleteTask(filteredTask.id)}
+                >
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/61/61848.png"
+                    style={{ width: 24, height: 24, marginLeft: 5 }}
+                  />
+                </DeleteTaskContainer>
+              </TasksContainer>
+            ))}
         </Item>
         <Item>
           <h4>Quinta</h4>
-          {thursday.map((task) => {
-            return (
-              <ul>
-                <li>{task}</li>
-              </ul>
-            );
-          })}
+          {tasks
+            .filter((task) => task.day === "Thursday")
+            .map((filteredTask) => (
+              <TasksContainer>
+                {filteredTask.text}
+                <DeleteTaskContainer
+                  onClick={() => deleteTask(filteredTask.id)}
+                >
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/61/61848.png"
+                    style={{ width: 24, height: 24, marginLeft: 5 }}
+                  />
+                </DeleteTaskContainer>
+              </TasksContainer>
+            ))}
         </Item>
         <Item>
           <h4>Sexta</h4>
-          {friday.map((task) => {
-            return (
-              <ul>
-                <li>{task}</li>
-              </ul>
-            );
-          })}
+          {tasks
+            .filter((task) => task.day === "Friday")
+            .map((filteredTask) => (
+              <TasksContainer>
+                {filteredTask.text}
+                <DeleteTaskContainer
+                  onClick={() => deleteTask(filteredTask.id)}
+                >
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/61/61848.png"
+                    style={{ width: 24, height: 24, marginLeft: 5 }}
+                  />
+                </DeleteTaskContainer>
+              </TasksContainer>
+            ))}
         </Item>
         <Item>
           <h4>Sábado</h4>
-          {saturday.map((task) => {
-            return (
-              <ul>
-                <li>{task}</li>
-              </ul>
-            );
-          })}
+          {tasks
+            .filter((task) => task.day === "Saturday")
+            .map((filteredTask) => (
+              <TasksContainer>
+                {filteredTask.text}
+                <DeleteTaskContainer
+                  onClick={() => deleteTask(filteredTask.id)}
+                >
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/61/61848.png"
+                    style={{ width: 24, height: 24, marginLeft: 5 }}
+                  />
+                </DeleteTaskContainer>
+              </TasksContainer>
+            ))}
         </Item>
         <Item>
           <h4>Domingo</h4>
-          {sunday.map((task) => {
-            return (
-              <ul>
-                <li>{task}</li>
-              </ul>
-            );
-          })}
+
+          {tasks
+            .filter((task) => task.day === "Sunday")
+            .map((filteredTask) => (
+              <TasksContainer>
+                {filteredTask.text}
+                <DeleteTaskContainer
+                  onClick={() => deleteTask(filteredTask.id)}
+                >
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/61/61848.png"
+                    style={{ width: 24, height: 24, marginLeft: 5 }}
+                  />
+                </DeleteTaskContainer>
+              </TasksContainer>
+            ))}
         </Item>
       </WeekTasksContainer>
     </>

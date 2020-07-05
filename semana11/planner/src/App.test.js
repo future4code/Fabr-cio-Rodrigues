@@ -1,9 +1,29 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import {
+  render,
+  fireEvent,
+  wait,
+  getByLabelText,
+  getByText,
+} from "@testing-library/react";
+import axios from "axios";
+import userEvent from "@testing-library/user-event";
+import Homepage from "./components/Homepage/index.js";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+axios.get = jest.fn().mockResolvedValue({ data: [] });
+axios.post = jest.fn().mockResolvedValue();
+
+describe("Funcionalidade criar nova tarefa", () => {
+  test("A tarefa é criada", () => {
+    const { getByText, getByLabelText } = render(<Homepage />);
+
+    const newTaskInput = getByLabelText(/Digite sua tarefa:/i);
+
+    userEvent.type(newTaskInput, "Jogar bola"); // até aqui deu certo
+
+    userEvent.selectOptions(
+      getByLabelText(/Selecione um dia da semana:/i),
+      getByText(/Quinta/)
+    );
+  });
 });
