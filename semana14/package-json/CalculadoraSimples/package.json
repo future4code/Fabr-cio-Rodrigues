@@ -1,0 +1,15 @@
+{
+  "name": "calculadora-simples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsc && node ./build/index.js"
+  },
+  "author": "Fabrício Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "13.7.7",
+    "typescript": "^3.8.3"
+  }
+}
