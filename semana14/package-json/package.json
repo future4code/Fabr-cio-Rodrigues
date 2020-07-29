@@ -1,0 +1,15 @@
+{
+  "name": "aula-node-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercicio1.ts",
+  "scripts": {
+    "start": "tsc && node ./build/exercicio1.js"
+  },
+  "author": "Fabrício Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "13.7.7",
+    "typescript": "^3.8.3"
+  }
+}
