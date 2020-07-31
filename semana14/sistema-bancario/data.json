@@ -1,0 +1,17 @@
+{
+  "accounts": [
+    {
+      "nome": "Fabrício",
+      "cpf": "000.000.000-10",
+      "dataNascimento": "01/06/2000",
+      "saldo": 0
+    },
+
+    {
+      "nome": "Fabrício",
+      "cpf": "000.000.000-10",
+      "dataNascimento": "01/06/2000",
+      "saldo": 0
+    }
+  ]
+}
