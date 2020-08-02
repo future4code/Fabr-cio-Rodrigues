@@ -6,6 +6,10 @@
   "scripts": {
     "start": "tsc && node ./build/index.js",
     "createAccount": "tsc && node ./build/criarconta.js",
+    "addAmount": "tsc && node ./build/adicionarsaldo.js",
+    "checkAmount": "tsc && node ./build/pegarsaldo.js",
+    "payBill": "tsc && node ./build/pagarconta.js",
+    "transferAmount": "tsc && node ./build/fazertransacao.js",
     "build": "tsc && node ./build/index.js"
   },
   "author": "",
