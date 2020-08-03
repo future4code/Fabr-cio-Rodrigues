@@ -5,9 +5,9 @@ const fileManager: JSONFileManager = new JSONFileManager("data.json");
 const accounts = fileManager.getObjectFromFile();
 
 export class Transaction {
-  date: string;
-  value: number;
-  description: string;
+  public date: string;
+  public value: number;
+  public description: string;
 
   constructor(newDate: string, newValue: number, newDescription: string) {
     this.date = newDate;
@@ -29,7 +29,7 @@ export class UserAccount {
     this.cpf = newCpf;
   }
 
-  getBalance = (arr: any[], name: string, cpf: string): any => {
+  public getBalance = (arr: any[], name: string, cpf: string): any => {
     let balance = arr.forEach((element: any, i: number, array: any) => {
       if (element.cpf === cpf && element.name === name) {
         console.log(
@@ -43,7 +43,7 @@ export class UserAccount {
     return balance;
   };
 
-  addBalance = (value: number): void => {
+  public addBalance = (value: number): void => {
     let elementsIndex = accounts.findIndex(
       (element: any) => element.cpf == this.cpf && element.name == this.name
     );
@@ -70,7 +70,7 @@ export class UserAccount {
     console.log("Saldo atualizado com sucesso!");
   };
 
-  payBill = (desc: string, value: number): void => {
+  public payBill = (desc: string, value: number): void => {
     let elementsIndex = accounts.findIndex(
       (element: any) => element.cpf == this.cpf && element.name == this.name
     );
@@ -97,7 +97,7 @@ export class UserAccount {
     console.log("Pagamento realizado com sucesso!");
   };
 
-  transferAmount = (
+  public transferAmount = (
     receiverName: string,
     receiverCpf: string,
     value: number
@@ -109,10 +109,32 @@ export class UserAccount {
 
       let newArray = [...accounts];
 
+      let today = moment().format("DD/MM/YYYY");
+
+      let newTransactionSender: Transaction = {
+        value: value,
+        date: today,
+        description: `Transferência no valor de R$${value.toFixed(
+          2
+        )} para ${receiverName}.`,
+      };
+
+      let newTransactionReceiver: Transaction = {
+        value: value,
+        date: today,
+        description: `Depósito no valor de R$${value.toFixed(2)} recebido de ${
+          this.name
+        }.`,
+      };
+
       // Usuário
       newArray[elementsIndex] = {
         ...newArray[elementsIndex],
         balance: newArray[elementsIndex].balance - value,
+        transactions: newArray[elementsIndex].transactions = [
+          ...newArray[elementsIndex].transactions,
+          newTransactionSender,
+        ],
       };
 
       let elementsIndex2 = accounts.findIndex(
@@ -124,6 +146,10 @@ export class UserAccount {
       newArray[elementsIndex2] = {
         ...newArray[elementsIndex2],
         balance: newArray[elementsIndex2].balance + value,
+        transactions: newArray[elementsIndex2].transactions = [
+          ...newArray[elementsIndex2].transactions,
+          newTransactionReceiver,
+        ],
       };
 
       fileManager.writeObjectToFile(newArray);

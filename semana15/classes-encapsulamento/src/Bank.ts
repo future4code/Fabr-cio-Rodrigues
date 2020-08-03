@@ -2,15 +2,15 @@ import { UserAccount } from "./UserInfo";
 import JSONFileManager from "./JSONFileManager";
 
 export default class Bank {
-  accounts: UserAccount[];
-  fileManager: JSONFileManager;
+  private accounts: UserAccount[];
+  private fileManager: JSONFileManager;
 
   constructor(newAccounts: UserAccount[], fileManager: JSONFileManager) {
     this.accounts = newAccounts;
     this.fileManager = fileManager;
   }
 
-  createAccount = (userAccount: UserAccount): void => {
+  public createAccount = (userAccount: UserAccount): void => {
     const accounts = this.fileManager.getObjectFromFile();
 
     accounts.push(userAccount);
@@ -18,7 +18,7 @@ export default class Bank {
     this.fileManager.writeObjectToFile(accounts);
   };
 
-  getAllAccounts = (): UserAccount[] => {
+  public getAllAccounts = (): UserAccount[] => {
     const accounts: UserAccount[] = this.fileManager.getObjectFromFile();
 
     console.log("Aqui estão todas as contas vinculadas ao nosso banco:");
@@ -26,7 +26,7 @@ export default class Bank {
     return accounts;
   };
 
-  getAccountByCpfAndName = (cpf: string, name: string): any => {
+  public getAccountByCpfAndName = (cpf: string, name: string): any => {
     const accounts: UserAccount[] = this.fileManager.getObjectFromFile();
     let retrievedAccount: any = [];
 
