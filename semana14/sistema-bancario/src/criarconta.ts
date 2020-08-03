@@ -4,7 +4,7 @@ import moment from "moment";
 type Account = {
   name: string;
   cpf: string;
-  userBirthday: moment.Moment;
+  userBirthday: string;
   balance: number;
   extract: [];
 };
@@ -40,7 +40,7 @@ const createNewAccount = (): void => {
     let newAccount: Account = {
       name: insertedName,
       cpf: insertedCpf,
-      userBirthday: moment(insertedBirthday, "DD/MM/YYYY"),
+      userBirthday: moment(insertedBirthday, "DD/MM/YYYY").format("DD/MM/YYYY"),
       balance: 0,
       extract: [],
     };

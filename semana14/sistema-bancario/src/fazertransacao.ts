@@ -10,7 +10,7 @@ type Transaction = {
 type Account = {
   name: string;
   cpf: string;
-  userBirthday: moment.Moment;
+  userBirthday: string;
   balance: number;
   extract: any[];
 };

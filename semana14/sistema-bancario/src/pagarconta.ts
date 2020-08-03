@@ -30,15 +30,13 @@ const insertedDate: string = newArgs[5];
 const payAccount = (): void => {
   const cpf = insertedCpf;
   const username = insertedName;
-  const newDate: string = moment(insertedDate, "DD/MM/YYYY").format(
-    "DD/MM/YYYY"
-  );
+  const newDate = moment(insertedDate, "DD/MM/YYYY").format("DD/MM/YYYY");
 
   try {
     let newTransaction: Transaction = {
       value: insertedAmount,
       desc: insertedDescription,
-      paymentDate: newDate,
+      paymentDate: insertedDate,
     };
 
     let elementsIndex = updatedAccounts.findIndex(
