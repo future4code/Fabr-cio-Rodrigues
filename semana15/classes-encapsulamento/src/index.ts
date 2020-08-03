@@ -1,36 +1,26 @@
 import JSONFileManager from "./JSONFileManager";
 import { UserAccount, Transaction } from "./UserInfo";
+import Bank from "./Bank";
 
 const fileManager: JSONFileManager = new JSONFileManager("data.json");
 
-const accounts = fileManager.readDatabase();
+const accounts = fileManager.getObjectFromFile();
 
 const newName: string = process.argv[2];
 const newAge: number = Number(process.argv[3]);
 const newCpf: string = process.argv[4];
 
-let newTransaction: Transaction = new Transaction(
-  "20/07/2020",
-  50,
-  "Jogos de vídeogame"
-);
-
 let newAccount = new UserAccount(newName, newAge, newCpf);
 
-accounts.push(newAccount);
+let newBank = new Bank(accounts, fileManager);
 
-console.log(newAccount);
+// newBank.createAccount(newAccount);
 
-fileManager.writeToDatabase(accounts);
+newBank.getAllAccounts();
 
-// type person = {
-//   name: string;
-// };
+newAccount.payBill("iFood", 35);
 
-// function createPerson(name: string): person {
-//   return { name: name };
-// }
+// newAccount.addBalance(100)
 
-// const myPerson2 = createPerson("Robson");
-
-// console.log(myPerson2);
+// console.log("Olá! Dados da sua conta abaixo:");
+// console.log(newBank.getAccountByCpfAndName("111.222.333-44", "Fabrício"));

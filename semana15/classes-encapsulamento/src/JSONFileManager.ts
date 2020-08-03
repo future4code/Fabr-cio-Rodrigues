@@ -7,7 +7,7 @@ export default class JSONFileManager {
     this.fileName = fileName;
   }
 
-  public readDatabase(): any {
+  public getObjectFromFile(): any {
     try {
       const fileData: string = fs.readFileSync(this.fileName).toString();
       return JSON.parse(fileData);
@@ -17,7 +17,7 @@ export default class JSONFileManager {
     }
   }
 
-  public writeToDatabase(data: any): void {
+  public writeObjectToFile(data: any): void {
     try {
       const dataAsString: string = JSON.stringify(data, null, 2);
       fs.writeFileSync(this.fileName, dataAsString);

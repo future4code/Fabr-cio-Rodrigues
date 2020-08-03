@@ -1,9 +1,52 @@
 [
   {
-    "balance": 0,
-    "transactions": [],
+    "balance": 30,
+    "transactions": [
+      {
+        "value": 80,
+        "date": "03/08/2020",
+        "description": "Depósito no valor de R$80.00."
+      },
+      {
+        "value": 50,
+        "date": "03/08/2020",
+        "description": "Depósito no valor de R$50.00."
+      },
+      {
+        "value": 50,
+        "date": "03/08/2020",
+        "description": "Rappi"
+      }
+    ],
     "name": "Fabrício",
     "age": 20,
     "cpf": "111.222.333-44"
+  },
+  {
+    "balance": 15,
+    "transactions": [
+      {
+        "value": 35,
+        "date": "03/08/2020",
+        "description": "iFood"
+      }
+    ],
+    "name": "Natasha",
+    "age": 20,
+    "cpf": "000.111.222-33"
+  },
+  {
+    "balance": 0,
+    "transactions": [],
+    "name": "Lucas",
+    "age": 20,
+    "cpf": "000.111.222-44"
+  },
+  {
+    "balance": 0,
+    "transactions": [],
+    "name": "Jéssica",
+    "age": 36,
+    "cpf": "999.999.999-10"
   }
 ]
