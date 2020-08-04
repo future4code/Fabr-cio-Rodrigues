@@ -1,0 +1,52 @@
+
+[
+  {
+    "name": "Fabrício",
+    "cpf": "111.222.333-44",
+    "userBirthday": "2000-06-01T03:00:00.000Z",
+    "balance": 98,
+    "extract": [
+      {
+        "value": 1,
+        "desc": "Jogos",
+        "paymentDate": "2020-08-02T03:00:00.000Z"
+      },
+      {
+        "value": 1,
+        "desc": "Jogos",
+        "paymentDate": "2020-08-02T03:00:00.000Z"
+      },
+      {
+        "value": 150,
+        "desc": "Curso",
+        "paymentDate": "2020-08-02T03:00:00.000Z"
+      },
+      {
+        "value": 150,
+        "desc": "Curso",
+        "paymentDate": "02/08/2020"
+      }
+    ]
+  },
+  {
+    "name": "Luiza",
+    "cpf": "333.222.111-00",
+    "userBirthday": "1995-04-28T03:00:00.000Z",
+    "balance": 200,
+    "extract": []
+  },
+  {
+    "name": "Fabrício",
+    "cpf": "010.020.030-040",
+    "userBirthday": "2000-06-01T03:00:00.000Z",
+    "balance": 0,
+    "extract": []
+  },
+  {
+    "name": "Joana",
+    "cpf": "010.020.030-045",
+    "userBirthday": "1990-05-21T03:00:00.000Z",
+    "balance": 0,
+    "extract": []
+  }
+]

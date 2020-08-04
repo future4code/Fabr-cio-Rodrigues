@@ -1,0 +1,96 @@
+[
+  {
+    "balance": 55,
+    "transactions": [
+      {
+        "value": 80,
+        "date": "03/08/2020",
+        "description": "Depósito no valor de R$80.00."
+      },
+      {
+        "value": 50,
+        "date": "03/08/2020",
+        "description": "Depósito no valor de R$50.00."
+      },
+      {
+        "value": 50,
+        "date": "03/08/2020",
+        "description": "Rappi"
+      },
+      {
+        "value": 12.5,
+        "date": "03/08/2020",
+        "description": "Transferência no valor de R$12.50 para Jéssica."
+      },
+      {
+        "value": 12.5,
+        "date": "03/08/2020",
+        "description": "Transferência no valor de R$12.50 para Jéssica."
+      }
+    ],
+    "name": "Fabrício",
+    "age": 20,
+    "cpf": "111.222.333-44"
+  },
+  {
+    "balance": 0,
+    "transactions": [],
+    "name": "Natasha",
+    "age": 20,
+    "cpf": "000.111.222-33"
+  },
+  {
+    "balance": 10,
+    "transactions": [
+      {
+        "value": 10,
+        "date": "03/08/2020",
+        "description": "Depósito no valor de R$10.00 recebido de Stefany."
+      }
+    ],
+    "name": "Lucas",
+    "age": 20,
+    "cpf": "000.111.222-44"
+  },
+  {
+    "balance": 25,
+    "transactions": [
+      {
+        "value": 12.5,
+        "date": "03/08/2020",
+        "description": "Depósito no valor de R$12.50 recebido de Fabrício."
+      },
+      {
+        "value": 12.5,
+        "date": "03/08/2020",
+        "description": "Depósito no valor de R$12.50 recebido de Fabrício."
+      }
+    ],
+    "name": "Jéssica",
+    "age": 36,
+    "cpf": "999.999.999-10"
+  },
+  {
+    "balance": 55,
+    "transactions": [
+      {
+        "value": 100,
+        "date": "03/08/2020",
+        "description": "Depósito no valor de R$100.00."
+      },
+      {
+        "value": 35,
+        "date": "03/08/2020",
+        "description": "iFood"
+      },
+      {
+        "value": 10,
+        "date": "03/08/2020",
+        "description": "Transferência no valor de R$10.00 para Lucas."
+      }
+    ],
+    "name": "Stefany",
+    "age": 22,
+    "cpf": "000.111.999-50"
+  }
+]
