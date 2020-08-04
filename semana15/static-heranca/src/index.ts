@@ -16,7 +16,7 @@
  * 11
  */
 
-class User {
+export default class User {
   private id: string;
   private email: string;
   private name: string;
