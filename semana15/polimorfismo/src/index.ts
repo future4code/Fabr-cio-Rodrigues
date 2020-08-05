@@ -131,7 +131,7 @@ class IndustrialClient extends Industry implements Client {
 
 // EXERCÍCIO 7
 class ClientManager {
-  constructor(private clients: Client[], private bills: number[]) {
+  constructor(private clients: Client[], private bills: number[] = []) {
     this.clients = clients;
     this.bills = bills;
   }
@@ -174,7 +174,34 @@ class ClientManager {
       this.clients.splice(registrationIndex, 1);
     }
   }
+
+  public printClients(): void {
+    this.clients.map((client) => {
+      console.log(
+        `${client.name} - ${client.registrationNumber} - ${
+          client.consumedEnergy
+        } - ${client.calculateBill()}`
+      );
+    });
+  }
 }
+
+let joaoCarlos = new ResidentialClient(
+  "João Carlos",
+  12,
+  500,
+  "555.555.555-15",
+  10,
+  "00000-500"
+);
+const clientsArr:
+  | ResidentialClient[]
+  | IndustrialClient[]
+  | CommercialClient[] = [joaoCarlos];
+
+let newClientManager = new ClientManager(clientsArr);
+
+newClientManager.printClients();
 
 const client: Client = {
   name: "Goli",
