@@ -27,20 +27,3 @@ newUser.createUser(IdGenerator.execute(), "jose@hotmail.com", "123561");
 ### EXERCÍCIO 6
 
 **A:** Porque o método verify do JWT é any, logo não podemos tipá-lo nem como string.
-**B:**
-**C:**
-**D:**
-
-### EXERCÍCIO 7
-
-**A:**
-**B:**
-**C:**
-**D:**
-
-### EXERCÍCIO 8
-
-**A:**
-**B:**
-**C:**
-**D:**
