@@ -15,4 +15,13 @@ export class BandBusiness {
         await bandDatabase.createBand(id, band.name, band.musicGenre, band.responsible);
 
     }
+    
+      async getBandByName(name: any) {
+        const bandDatabase = new BandDatabase();
+        const bandFromDB = await bandDatabase.getBandByName(name);
+    
+        return bandFromDB;
+      }
+    
 }
+
