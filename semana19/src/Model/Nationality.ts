@@ -1,0 +1,4 @@
+export enum NATIONALITY {
+    BRAZILIAN = "BRAZILIAN",
+    AMERICAN = "AMERICAN",
+  }
